@@ -8,20 +8,18 @@
 import { onMounted } from "vue";
 import { storeToRefs } from "pinia";
 import { useRouter } from "vue-router";
-import { useUserStore } from "./stores/user.js";
+import { userStore } from "./stores/user";
 
 const router = useRouter();
-const userStore = useUserStore();
-const { user } = storeToRefs(userStore);
+const storage = userStore();
+const { user } = storeToRefs(storage);
 
 onMounted(async () => {
   try {
-    await userStore.fetchUser();
-    if (!user.session) {
-      console.log("No estás loggeado");
+    await storage.fetchUser();
+    if (!user.value) {
       router.push({ path: "/auth" });
     } else {
-      console.log("Estás loggeado");
       router.push({ path: "/" });
     }
   } catch (e) {
@@ -29,3 +27,5 @@ onMounted(async () => {
   }
 });
 </script>
+
+<style></style>

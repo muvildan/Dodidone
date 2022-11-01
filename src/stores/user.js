@@ -1,61 +1,109 @@
-import { defineStore } from "pinia";
+import { ref } from "vue";
 import { supabase } from "../supabase";
-import { reactive } from "vue";
-// import router from "../router";
+import { defineStore } from "pinia";
+import router from "../router";
 
-export const useUserStore = defineStore("user", {
+export const userStore = defineStore("user", {
   state: () => ({
     user: null,
   }),
-
-  mutations: {
-    setUser(state, payload) {
-      state.user = payload;
-    },
-  },
-
   actions: {
     async fetchUser() {
-      const user = await supabase.auth.getSession();
-      if (user) this.user = user;
+      const user = await supabase.auth.user();
+      this.user = user;
     },
+    async handleLogin(credentials) {
+      try {
+        const { error, user } = await supabase.auth.signIn({
+          email: credentials.email,
+          password: credentials.password,
+        });
+        console.log(user);
+        this.user = user;
+        if (error) {
+          alert("Error logging in: " + error.message);
+        }
+        router.push({ path: "/" });
+      } catch (error) {
+        console.error("Error thrown:", error.message);
+        alert(error.error_description || error);
+      }
+    },
+    async handleSignup(credentials) {
+      try {
+        const { email, password } = credentials;
+        // prompt user if they have not filled populated their credentials
+        if (!email || !password) {
+          alert("Please provide both your email and password.");
+          return;
+        }
+        const { error, user } = await supabase.auth.signUp({
+          email,
+          password,
+        });
 
-    async signUp(email, password) {
-      const { user, error } = await supabase.auth.signUp({
-        email: email,
-        password: password,
-      });
-      if (error) throw error;
-      if (user) this.user = user;
+        this.user = user;
+        console.log(this.user);
+
+        if (error) {
+          alert(error.message);
+          console.error(error, error.message);
+          return;
+        }
+        alert("Signup successful, confirmation mail should be sent soon!");
+        router.push({ path: "/" });
+      } catch (err) {
+        alert("Fatal error signing up");
+        console.error("signup error", err);
+      }
+    },
+    async handlePasswordReset() {
+      const email = prompt("Please enter your email:");
+      if (!email) {
+        window.alert("Email address is required.");
+      } else {
+        const { error } = await supabase.auth.api.resetPasswordForEmail(email);
+        if (error) {
+          alert("Error: " + error.message);
+        } else {
+          alert("Password recovery email has been sent.");
+        }
+      }
+    },
+    async handleUpdateUser(credentials) {
+      try {
+        const { error } = await supabase.auth.update(credentials);
+        if (error) {
+          alert("Error updating user info: " + error.message);
+        } else {
+          alert("Successfully updated user info!");
+          window.location.href = "/";
+        }
+      } catch (error) {
+        alert("Error updating user info: " + error.message);
+      }
+    },
+    async handleLogout() {
+      console.log("logging out");
+      try {
+        const { error } = await supabase.auth.signOut();
+
+        if (error) {
+          alert("Error signing out");
+          console.error("Error", error);
+          return;
+        }
+
+        this.user = null;
+
+        alert("You have signed out!");
+        router.push({ path: "/auth" });
+      } catch (err) {
+        alert("Unknown error signing out");
+        console.error("Error", err);
+      }
     },
   },
-
-  // async logIn({ commit }, form) {
-  //   try {
-  //     const { error, user } = await supabase.auth.signIn({
-  //       email: form.email,
-  //       password: form.password,
-  //     });
-  //     if (error) throw error;
-  //     await router.push("/");
-  //     commit("setUser", user.email);
-  //   } catch (error) {
-  //     alert(error.error_description || error.message);
-  //   }
-  // },
-
-  // async logOut({ commit }) {
-  //   try {
-  //     const { error } = await supabase.auth.signOut();
-  //     if (error) throw error;
-  //     commit("setUser", null);
-  //     await router.push("/auth");
-  //   } catch (error) {
-  //     alert(error.error_description || error.message);
-  //   }
-  // },
-  // },
-
   persist: {
     enabled: true,
     strategies: [
