@@ -1,6 +1,15 @@
 <template>
-  <main>
-    <div class="flex flex-col h-screen w-full justify-center mx-auto align-middle sm:w-1/2 xl:w-1/3">
+  <main
+    class="bg-gradient-to-r bg-clip-background background-transparent from-indigo-200 via-red-200 to-yellow-100 animate-background"
+  >
+    <div
+      class="flex flex-col gap-4 h-screen w-screen justify-center mx-auto align-middle sm:w-1/2 xl:w-1/3"
+    >
+      <div
+        class="flex flex-col self-end bg-gradient-to-r bg-clip-text from-indigo-500 via-green-500 to-indigo-500 animate-text"
+      >
+        <h1 class="font-bold text-6xl">Dodidone.</h1>
+      </div>
       <Transition name="fade" mode="out-in">
         <div v-if="!register">
           <LogIn @handleAuthSwitch="handleAuthSwitch($event)" />
@@ -37,7 +46,6 @@ export default {
 </script>
 
 <style>
-
 .container {
   position: relative;
   padding: 0;
@@ -45,7 +53,7 @@ export default {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s;
+  transition: opacity 0.3s;
 }
 
 .fade-enter-from,

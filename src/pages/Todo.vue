@@ -5,8 +5,8 @@ import LogOut from "../components/LogOut.vue";
 
 <template>
   <Suspense>
-    <template #default>
-      <div class="w-screen h-screen grid grid-cols-2">
+    <template #default >
+      <div class="w-screen h-screen grid grid-cols-2 bg-gradient-to-r bg-clip-background background-transparent from-indigo-200 via-red-200 to-yellow-100 animate-background">
         <TodoList />
         <LogOut />
       </div>

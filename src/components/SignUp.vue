@@ -1,5 +1,7 @@
 <template>
-  <div class="border-teal p-8 border-t-12 mb-6 rounded-lg shadow-lg bg-white">
+  <div
+    class="sm:min-h-1/2 xl:min-h-1/3 border-teal p-8 border-t-12 rounded-lg shadow-xl bg-white"
+  >
     <div class="grid gap-6 mb-6 md:grid-cols-2">
       <div>
         <label class="font-bold text-grey-darker mb-2"> Name</label>
@@ -35,17 +37,19 @@
       <label class="font-bold text-grey-darker block mb-2">Password</label>
       <input
         type="password"
-        class="block appearance-none w-full bg-white border border-grey-light hover:border-grey px-2 py-2 rounded shadow"
-        placeholder="🔐"
+        placeholder="Password"
+        class="block appearance-none w-full bg-white border border-grey-light hover:border-grey px-2 py-2 rounded shadow placeholder:pl-0"
         v-model="password"
       />
     </div>
 
     <div class="flex flex-col gap-2">
       <a
-        @click="auth.handleSignup({ email, password })"
+        @click="
+          auth.handleSignup({ email, password }, { userName, userSurname })
+        "
         href="#"
-        class="btn-black"
+        class="btn-black mb-1"
         tabindex="0"
       >
         Sign up

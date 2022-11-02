@@ -29,18 +29,26 @@ export const userStore = defineStore("user", {
         alert(error.error_description || error);
       }
     },
-    async handleSignup(credentials) {
+    async handleSignup(credentials, metadata) {
       try {
         const { email, password } = credentials;
-        // prompt user if they have not filled populated their credentials
+        const { userName, userSurname } = metadata;
         if (!email || !password) {
           alert("Please provide both your email and password.");
           return;
         }
-        const { error, user } = await supabase.auth.signUp({
-          email,
-          password,
-        });
+        const { error, user } = await supabase.auth.signUp(
+          {
+            email,
+            password,
+          },
+          {
+            data: {
+              userName,
+              userSurname,
+            },
+          }
+        );
 
         this.user = user;
         console.log(this.user);
