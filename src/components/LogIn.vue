@@ -2,7 +2,7 @@
   <div
     class="sm:min-h-1/2 xl:min-h-1/3 border-teal p-8 border-t-12 rounded-lg shadow-xl bg-white"
   >
-    <p class="text-start mb-10">The place where you'll get things <span class="text-transparent text-xl inline-block bg-gradient-to-r bg-clip-text from-indigo-500 via-green-500 to-indigo-500 animate-text"> done</span>.</p>
+    <p class="text-start mb-10">The place where you'll get things <span class="inline-block hover:line-through"> done</span>.</p>
     <div class="mb-4">
       <label class="font-bold text-grey-darker block mb-2">Email</label>
       <input

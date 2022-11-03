@@ -1,10 +1,10 @@
 <template>
   <div class="w-screen p-12">
-    <h1 class="font-bold text-6xl">Todo List.</h1>
+    <h1 class="text-white font-bold text-6xl bg-black px-5 ">Dodidone.</h1>
     <div class="flex gap-2 my-2">
       <input
         v-model="task"
-        class="rounded bg-gray-300 focus:placeholder-gray-500 ...0 w-full p-2"
+        class="rounded bg-gray-300 placeholder-gray-900 focus:placeholder-gray-500 ...0 w-full p-2"
         type="text"
         placeholder="Add here your new todos"
       />

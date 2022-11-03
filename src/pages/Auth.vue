@@ -1,14 +1,12 @@
 <template>
-  <main
-    class="bg-gradient-to-r bg-clip-background background-transparent from-indigo-200 via-red-200 to-yellow-100 animate-background"
-  >
+  <main class="bg-gray-200">
     <div
-      class="flex flex-col gap-4 h-screen w-screen justify-center mx-auto align-middle sm:w-1/2 xl:w-1/3"
+      class="flex flex-col gap-4 h-screen w-full justify-center mx-auto align-middle sm:w-1/2 xl:w-1/3"
     >
       <div
-        class="flex flex-col self-end bg-gradient-to-r bg-clip-text from-indigo-500 via-green-500 to-indigo-500 animate-text"
+        class="flex flex-col self-end bg-gradient-to-r bg-clip-text from-indigo-400 via-green-600 to-indigo-400 animate-text"
       >
-        <h1 class="font-bold text-6xl">Dodidone.</h1>
+        <h1 class="font-bold text-6xl text-transparent">Dodidone.</h1>
       </div>
       <Transition name="fade" mode="out-in">
         <div v-if="!register">

@@ -49,7 +49,7 @@
           auth.handleSignup({ email, password }, { userName, userSurname })
         "
         href="#"
-        class="btn-black mb-1"
+        class="btn-black-outline mb-1"
         tabindex="0"
       >
         Sign up
