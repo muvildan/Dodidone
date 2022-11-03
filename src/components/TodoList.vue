@@ -1,16 +1,20 @@
-<template>
-  <div class="w-screen p-12">
-    <h1 class="text-white font-bold text-6xl bg-black px-5 ">Dodidone.</h1>
-    <div class="flex gap-2 my-2">
+<template class="">
+  <div class="flex flex-col gap-3 w-screen p-24">
+    <div class="bg-white pr-60 rounded-xl">
+      <h1 class="text-transparent font-bold text-6xl px-5 bg-gradient-to-r bg-clip-text from-indigo-500 via-green-600 to-indigo-500 animate-text">
+        Dodidone.
+      </h1>
+    </div>
+    <div class="flex gap-5 my-3">
       <input
         v-model="task"
-        class="rounded bg-gray-300 placeholder-gray-900 focus:placeholder-gray-500 ...0 w-full p-2"
+        class="rounded bg-gray-100 border border-solid border-gray-200 placeholder-gray-700 focus:placeholder-gray-500 ...0 w-full p-2"
         type="text"
         placeholder="Add here your new todos"
       />
       <button @click="addTask" class="btn-black">Add</button>
     </div>
-    <div class="bg-white shadow overflow-hidden rounded-md">
+    <div class="flex flex-col gap-5 bg-white shadow overflow-hidden rounded-md">
       <ul v-for="(todo, index) in allTodos.getAllTodos" :key="index">
         <Todo :todo="todo" />
       </ul>

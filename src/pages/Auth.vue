@@ -4,9 +4,11 @@
       class="flex flex-col gap-4 h-screen w-full justify-center mx-auto align-middle sm:w-1/2 xl:w-1/3"
     >
       <div
-        class="flex flex-col self-end bg-gradient-to-r bg-clip-text from-indigo-400 via-green-600 to-indigo-400 animate-text"
+        class="flex flex-col self-end sm:min-h-1/2 xl:min-h-1/3 border-teal px-8 border-t-12 rounded-lg shadow-xl bg-white"
       >
+      <div class="bg-gradient-to-r bg-clip-text from-indigo-500 via-green-600 to-indigo-500 animate-text">
         <h1 class="font-bold text-6xl text-transparent">Dodidone.</h1>
+      </div>
       </div>
       <Transition name="fade" mode="out-in">
         <div v-if="!register">

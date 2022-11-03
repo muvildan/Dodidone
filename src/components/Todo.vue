@@ -4,17 +4,17 @@
   >
     <div class="flex items-center px-4 py-4 sm:px-6">
       <div class="min-w-0 flex-1 flex items-center">
+        <div>
+          <input
+            @click="updateTaskCompletion(todo, !todo['is_complete'])"
+            type="checkbox"
+            class="w-4 h-4 bg-green-300 text-black border-0 rounded-md focus:ring-0 cursor-pointer mr-5"
+            :checked="todo['is_complete']"
+          />
+        </div>
         <div class="text-sm leading-5 font-medium truncate">
           {{ todo.task }}
         </div>
-      </div>
-      <div>
-        <input
-          @click="updateTaskCompletion(todo, !todo['is_complete'])"
-          class="cursor-pointer"
-          type="checkbox"
-          :checked="todo['is_complete']"
-        />
       </div>
       <button
         @click="clearTodo()"

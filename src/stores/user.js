@@ -18,21 +18,25 @@ export const userStore = defineStore("user", {
           email: credentials.email,
           password: credentials.password,
         });
-        console.log(user);
-        this.user = user;
-        if (error) {
-          alert("Error logging in: " + error.message);
+        if (!error) {
+          console.log(user);
+          this.user = user;
+          router.push({ path: "/" });
         }
-        router.push({ path: "/" });
+        else if (error) {
+          alert("Error logging in: " + error.message);
+          router.push({ path: "/auth" })
+        }
       } catch (error) {
         console.error("Error thrown:", error.message);
         alert(error.error_description || error);
+        router.push({ path: "/auth" })
       }
     },
     async handleSignup(credentials, metadata) {
       try {
         const { email, password } = credentials;
-        const { userName, userSurname } = metadata;
+        const { userName } = metadata;
         if (!email || !password) {
           alert("Please provide both your email and password.");
           return;
@@ -45,7 +49,6 @@ export const userStore = defineStore("user", {
           {
             data: {
               userName,
-              userSurname,
             },
           }
         );
@@ -59,7 +62,6 @@ export const userStore = defineStore("user", {
           return;
         }
         alert("Signup successful, confirmation mail should be sent soon!");
-        router.push({ path: "/" });
       } catch (err) {
         alert("Fatal error signing up");
         console.error("signup error", err);
@@ -95,16 +97,12 @@ export const userStore = defineStore("user", {
       console.log("logging out");
       try {
         const { error } = await supabase.auth.signOut();
-
         if (error) {
           alert("Error signing out");
           console.error("Error", error);
           return;
         }
-
         this.user = null;
-
-        alert("You have signed out!");
         router.push({ path: "/auth" });
       } catch (err) {
         alert("Unknown error signing out");

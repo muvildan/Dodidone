@@ -2,26 +2,15 @@
   <div
     class="sm:min-h-1/2 xl:min-h-1/3 border-teal p-8 border-t-12 rounded-lg shadow-xl bg-white"
   >
-    <div class="grid gap-6 mb-6 md:grid-cols-2">
+    <div class="mb-4">
       <div>
-        <label class="font-bold text-grey-darker mb-2"> Name</label>
+        <label class="font-bold text-grey-darker block mb-2">Username</label>
         <input
           type="text"
-          class="appearance-none w-full bg-white border border-grey-light hover:border-grey px-2 py-2 rounded shadow"
-          placeholder="Great"
+          class="block appearance-none w-full bg-white border border-grey-light hover:border-grey px-2 py-2 rounded shadow"
+          placeholder="CoolKangaroo"
           v-model="userName"
         />
-      </div>
-      <div>
-        <div>
-          <label class="font-bold text-grey-darker mb-2"> Surname</label>
-          <input
-            type="text"
-            class="appearance-none w-full bg-white border border-grey-light hover:border-grey px-2 py-2 rounded shadow"
-            placeholder="Peacock"
-            v-model="userSurname"
-          />
-        </div>
       </div>
     </div>
     <div class="mb-4">
@@ -29,7 +18,7 @@
       <input
         type="text"
         class="block appearance-none w-full bg-white border border-grey-light hover:border-grey px-2 py-2 rounded shadow"
-        placeholder="great.peacock@example.com"
+        placeholder="coolkangaroo@example.com"
         v-model="email"
       />
     </div>
@@ -49,7 +38,7 @@
           auth.handleSignup({ email, password }, { userName, userSurname })
         "
         href="#"
-        class="btn-black-outline mb-1"
+        class="btn-black-outline"
         tabindex="0"
       >
         Sign up
@@ -82,16 +71,13 @@ export default defineComponent({
 
   setup() {
     const auth = userStore();
-
     const userName = ref("");
-    const userSurname = ref("");
     const email = ref("");
     const password = ref("");
     const register = ref(true);
 
     return {
       userName,
-      userSurname,
       email,
       password,
       register,
