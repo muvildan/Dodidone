@@ -1,7 +1,7 @@
-<template class="">
+<template>
   <div class="flex flex-col gap-3 w-screen p-24">
-    <div class="bg-white pr-60 rounded-xl">
-      <h1 class="text-transparent font-bold text-6xl px-5 bg-gradient-to-r bg-clip-text from-indigo-500 via-green-600 to-indigo-500 animate-text">
+    <div>
+      <h1 class="text-transparent font-bold text-6xl bg-gradient-to-r bg-clip-text from-indigo-500 via-green-600 to-indigo-500 animate-text">
         Dodidone.
       </h1>
     </div>
@@ -14,7 +14,7 @@
       />
       <button @click="addTask" class="btn-black">Add</button>
     </div>
-    <div class="flex flex-col gap-5 bg-white shadow overflow-hidden rounded-md">
+    <div class="m:min-h-1/2 xl:min-h-1/3 p-8 flex flex-col gap-5 overflow-hidden">
       <ul v-for="(todo, index) in allTodos.getAllTodos" :key="index">
         <Todo :todo="todo" />
       </ul>

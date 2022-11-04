@@ -1,6 +1,6 @@
 <template>
   <li
-    class="w-full block cursor-pointer hover:bg-gray-200 focus:outline-none focus:bg-gray-200 transition duration-150 ease-in-out"
+    class="sm:min-h-1/2 xl:min-h-1/3 w-1/5 bg-white border-teal p-8 border-t-12 rounded-lg shadow-xl block cursor-pointer hover:bg-gray-200 focus:outline-none focus:bg-gray-200 transition duration-150 ease-in-out"
   >
     <div class="flex items-center px-4 py-4 sm:px-6">
       <div class="min-w-0 flex-1 flex items-center">
