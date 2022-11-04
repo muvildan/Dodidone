@@ -1,23 +1,29 @@
 <template>
-  <div class="flex flex-col gap-3 w-screen p-24">
+  <div class="flex flex-col gap-3 w-screen p-10 xl:p-24">
     <div>
-      <h1 class="text-transparent font-bold text-6xl bg-gradient-to-r bg-clip-text from-indigo-500 via-green-600 to-indigo-500 animate-text">
+      <h1
+        class="text-transparent font-bold text-4xl xl:text-6xl bg-gradient-to-r bg-clip-text from-indigo-500 via-green-600 to-indigo-500 animate-text"
+      >
         Dodidone.
       </h1>
     </div>
     <div class="flex gap-5 my-3">
       <input
         v-model="task"
-        class="rounded bg-gray-100 border border-solid border-gray-200 placeholder-gray-700 focus:placeholder-gray-500 ...0 w-full p-2"
+        class="w-[12rem] focus:w-screen focus:border-indigo-500 duration-1000 rounded bg-gray-100 border border-solid border-gray-200 placeholder-gray-700 focus:placeholder-gray-500 ...0 p-2"
         type="text"
-        placeholder="Add here your new todos"
+        placeholder="Add here your new task. Like the groceries you always forget to buy, that pending call you've been procrastinating. You do you. :)"
       />
       <button @click="addTask" class="btn-black">Add</button>
     </div>
-    <div class="m:min-h-1/2 xl:min-h-1/3 p-8 flex flex-col gap-5 overflow-hidden">
-      <ul v-for="(todo, index) in allTodos.getAllTodos" :key="index">
-        <Todo :todo="todo" />
-      </ul>
+    <div id="board" class="h-4/5 mb-20 xl:mb-0">
+      <div
+        class="sm:min-h-1/2 xl:min-h-1/3 py-8 flex flex-row flex-wrap justify-center gap-5"
+      >
+        <ul v-for="(todo, index) in allTodos.getAllTodos" :key="index">
+          <Todo :todo="todo" />
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -32,6 +38,12 @@ export default defineComponent({
   name: "TodoList",
   components: {
     Todo,
+  },
+
+  data() {
+    return {
+      newTask: false,
+    };
   },
 
   async setup() {
@@ -88,3 +100,15 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped>
+#board {
+  background-color: #e0e7ff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23a5b4fc' fill-opacity='0.65'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  border-width: 0.5px;
+  border-color: #a6aef6;
+  border-radius: 0.5em;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+</style>

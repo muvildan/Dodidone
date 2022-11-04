@@ -14,7 +14,10 @@ export default defineComponent({
 </script>
 
 <template>
-  <button class="m-12 btn-black place-self-end w-1/8" @click="userState.handleLogout">
+  <button
+    class="m-12 btn-black place-self-end w-1/8"
+    @click="userState.handleLogout"
+  >
     Logout
   </button>
 </template>

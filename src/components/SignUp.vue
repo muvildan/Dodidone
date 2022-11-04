@@ -1,6 +1,6 @@
 <template>
   <div
-    class="sm:min-h-1/2 xl:min-h-1/3 border-teal p-8 border-t-12 rounded-lg shadow-xl bg-white"
+    class="mx-10 xl:m-0 sm:min-h-1/2 xl:min-h-1/3 border-teal p-8 border-t-12 rounded-lg shadow-xl bg-white"
   >
     <div class="mb-4">
       <div>

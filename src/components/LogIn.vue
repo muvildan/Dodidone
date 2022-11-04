@@ -1,8 +1,15 @@
 <template>
   <div
-    class="sm:min-h-1/2 xl:min-h-1/3 border-teal p-8 border-t-12 rounded-lg shadow-xl bg-white"
+    class="mx-10 xl:m-0 sm:min-h-1/2 xl:min-h-1/3 border-teal p-8 border-t-12 rounded-lg shadow-xl bg-white"
   >
-    <p class="text-start mb-10">The place where you'll get things <span class="inline-block no-line-through hover:line-through hover:decoration-red-400"> done</span>.</p>
+    <p class="text-start mb-4 xl:mb-10">
+      The place where you'll get things
+      <span
+        class="inline-block no-line-through hover:line-through hover:decoration-red-200"
+      >
+        done</span
+      >.
+    </p>
     <div class="mb-4">
       <label class="font-bold text-grey-darker block mb-2">Email</label>
       <input

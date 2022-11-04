@@ -22,15 +22,14 @@ export const userStore = defineStore("user", {
           console.log(user);
           this.user = user;
           router.push({ path: "/" });
-        }
-        else if (error) {
+        } else if (error) {
           alert("Error logging in: " + error.message);
-          router.push({ path: "/auth" })
+          router.push({ path: "/auth" });
         }
       } catch (error) {
         console.error("Error thrown:", error.message);
         alert(error.error_description || error);
-        router.push({ path: "/auth" })
+        router.push({ path: "/auth" });
       }
     },
     async handleSignup(credentials, metadata) {
