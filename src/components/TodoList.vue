@@ -18,7 +18,7 @@
     </div>
     <div id="board" class="min-h-3/4 max-h-fit mb-25 xl:mb-5">
       <div
-        class="sm:min-h-1/2 xl:min-h-1/3 py-8 flex flex-row flex-wrap justify-center gap-5"
+        class="sm:min-h-1/2 xl:min-h-1/3 py-8 flex flex-row flex-wrap justify-center gap-y-5"
       >
         <ul v-for="(todo, index) in allTodos.getAllTodos" :key="index">
           <Todo :todo="todo" />

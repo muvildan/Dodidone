@@ -1,7 +1,7 @@
 <template>
   <Transition name="fade" mode="out-in">
     <li
-      class="mx-2 sm:min-h-1/2 xl:min-h-1/3 xl:max-w-max bg-white border-teal p-1/2 xl:py-6 xl:px-2 border-t-12 rounded-lg shadow-xl cursor-pointer hover:bg-gray-200 focus:outline-none focus:bg-gray-200 transition duration-150 ease-in-out"
+      class="mx-2 sm:min-h-1/2 xl:min-h-1/3 xl:max-w-max bg-white border-teal xl:py-6 xl:px-2 border-t-12 rounded-lg shadow-xl cursor-pointer hover:bg-gray-200 focus:outline-none focus:bg-gray-200 transition duration-150 ease-in-out"
     >
       <div class="flex items-center p-2 xl:py-0 sm:px-6">
         <div class="min-w-0 flex-1 flex items-center">
@@ -9,11 +9,14 @@
             <input
               @click="updateTaskCompletion(todo, !todo['is_complete'])"
               type="checkbox"
-              class="xl:w-4 xl:h-4 accent-green-600 border-0 rounded-md focus:ring-0 focus:text-white cursor-pointer mr-5"
+              class="xl:w-4 xl:h-4 accent-green-600 border-0 rounded-md focus:ring-0 focus:text-white cursor-pointer mr-2 xl:mr-5"
               :checked="todo['is_complete']"
             />
           </div>
-          <div class="max-w-[150px] truncate xl:max-w-fit text-sm xl:text-base leading-5 font-medium">
+          <div
+            id="task"
+            class="max-w-[200px] xl:max-w-fit text-sm xl:text-base leading-5 font-medium"
+          >
             {{ todo.task }}
           </div>
         </div>
@@ -68,4 +71,10 @@ export default defineComponent({
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+#task {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+</style>
