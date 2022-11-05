@@ -54,7 +54,7 @@
         </div>
       </div>
       <div class="flex flex-col">
-        <a @click="handleAuthSwitch" href="#" class="py-2 px-4 text-center">
+        <a @click="handleAuthSwitch" href="#" class="py-2 px-4 text-center text-sm xl:text-basis">
           <span>Back to log in</span>
         </a>
       </div>

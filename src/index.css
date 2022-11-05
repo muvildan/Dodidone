@@ -33,7 +33,8 @@
   @apply w-[200px] rounded bg-gray-100 border border-solid border-gray-300 placeholder-gray-700 p-2;
 }
 
-.input-expand:hover, .input-expand:focus {
+.input-expand:hover,
+.input-expand:focus {
   @apply w-full border-indigo-400 border placeholder-gray-500;
 }
 
@@ -43,8 +44,8 @@ body,
   height: 100%;
   width: 100%;
   min-height: 100vh;
-  margin: 0;
-  padding: 0;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 input {

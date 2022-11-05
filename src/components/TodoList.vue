@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-3 w-screen min-h-screen max-h-fit p-10 xl:p-24">
+  <div class="flex flex-col gap-3 xl:h-screen p-10">
     <div>
       <h1
         class="text-transparent font-bold text-4xl xl:text-6xl bg-gradient-to-r bg-clip-text from-indigo-500 via-green-600 to-indigo-500 animate-text"
@@ -16,7 +16,7 @@
       />
       <button @click="addTask" class="primary-button">Add</button>
     </div>
-    <div id="board" class="min-h-3/4 max-h-fit mb-25 xl:mb-5">
+    <div id="board" class="min-h-3/4 max-h-fit">
       <div
         class="sm:min-h-1/2 xl:min-h-1/3 py-8 flex flex-row flex-wrap justify-center gap-y-5"
       >

@@ -13,10 +13,7 @@
               :checked="todo['is_complete']"
             />
           </div>
-          <div
-            id="task"
-            class="xl:max-w-fit text-sm xl:text-base leading-5 font-medium"
-          >
+          <div id="task" class="xl:w-fit xl:text-base leading-5 font-medium">
             {{ todo.task }}
           </div>
         </div>
@@ -72,10 +69,13 @@ export default defineComponent({
 </script>
 
 <style scoped>
-#task {
-  max-width: 200px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+@media (max-width: 400px) {
+  #task {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    max-width: 200px;
+    overflow: scroll;
+    white-space: nowrap;
+  }
 }
 </style>

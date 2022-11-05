@@ -15,7 +15,7 @@ export default defineComponent({
 
 <template>
   <button
-    class="m-12 btn-black place-self-end w-1/8"
+    class="mx-12 mb-5 xl:mb-10 btn-black place-self-end w-1/8"
     @click="userState.handleLogout"
   >
     Logout

@@ -2,7 +2,7 @@
   <div
     class="mx-10 xl:m-0 sm:min-h-1/2 xl:min-h-1/3 border-teal p-8 border-t-12 rounded-lg shadow-xl bg-white"
   >
-    <p class="text-start mb-4 xl:mb-7">
+    <p class="text-start mb-4 xl:mb-9 text-sm xl:text-base">
       The place where you'll get things
       <span
         class="inline-block no-line-through transition duration-500 hover:line-through hover:decoration-2"
@@ -19,7 +19,7 @@
         v-model="email"
       />
     </div>
-    <div class="mb-4">
+    <div v-on:keyup.enter="userState.handleLogin({ email, password })" class="mb-4">
       <label class="font-bold text-grey-darker block mb-2">Password</label>
       <input
         type="password"
@@ -29,7 +29,7 @@
       />
     </div>
 
-    <div class="my-2 text-sm leading-5">
+    <div class="my-3 xl:my-2 text-sm leading-5">
       <a
         @click.prevent="userState.handlePasswordReset"
         href="/auth"
@@ -39,11 +39,13 @@
       </a>
     </div>
 
-    <div class="flex flex-col gap-2">
+    <div
+      class="flex flex-col gap-2"
+    >
       <a
         @click="userState.handleLogin({ email, password })"
         href="#"
-        class="btn-black-outline xl:py-2 xl:w-fit self-center"
+        class="btn-black-outline xl:w-fit self-center"
       >
         <span>Log in</span>
       </a>
@@ -59,7 +61,11 @@
         </div>
       </div>
       <div class="flex flex-col">
-        <a @click="handleAuthSwitch" href="#" class="py-2 px-4 text-center">
+        <a
+          @click="handleAuthSwitch"
+          href="#"
+          class="py-2 px-4 text-center text-sm xl:text-basis"
+        >
           <span>Register now for free!</span>
         </a>
       </div>

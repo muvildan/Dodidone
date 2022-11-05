@@ -4,7 +4,7 @@
       class="flex flex-col gap-4 h-screen w-screen justify-center mx-auto align-middle sm:w-1/2 xl:w-1/3"
     >
       <div
-        class="flex flex-col self-center xl:self-end mb-10 xl:mb-5 w-fit sm:min-h-1/2 xl:min-h-1/3 border-teal px-6 border-t-12 rounded-lg shadow-xl bg-white"
+        class="mx-10 xl:m-0 w-max flex flex-col self-center xl:self-end mb-1 xl:mb-5 sm:min-h-1/2 xl:min-h-1/3 border-teal px-12 border-t-12 rounded-lg shadow-xl bg-white"
       >
         <div
           class="bg-gradient-to-r bg-clip-text from-indigo-500 via-green-600 to-indigo-500 animate-text"
