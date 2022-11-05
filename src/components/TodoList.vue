@@ -14,9 +14,9 @@
         type="text"
         placeholder="Add here your new task. Like the groceries you always forget to buy, that pending call you've been procrastinating. You do you. :)"
       />
-      <button @click="addTask" class="btn-black">Add</button>
+      <button @click="addTask" class="primary-button">Add</button>
     </div>
-    <div id="board" class="h-4/5 mb-20 xl:mb-0">
+    <div id="board" class="h-3/4 mb-20 xl:mb-0">
       <div
         class="sm:min-h-1/2 xl:min-h-1/3 py-8 flex flex-row flex-wrap justify-center gap-5"
       >

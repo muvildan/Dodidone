@@ -9,8 +9,12 @@
   @apply border border-transparent bg-indigo-500 text-white font-bold py-2 px-4 rounded text-center;
 }
 
+.btn-black {
+  @apply border border-transparent bg-black text-white font-bold py-2 px-4 rounded text-center;
+}
+
 .btn-black:hover {
-  @apply transition duration-150 bg-indigo-700 text-white;
+  @apply transition duration-150 bg-white text-black;
 }
 
 .btn-black-outline {
