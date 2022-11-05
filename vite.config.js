@@ -8,7 +8,7 @@ export default defineConfig({
     minify: false,
     rollupOptions: {
       input: {
-        main: resolveBaseUrl(__dirname, "index.html"),
+        main: resolve(__dirname, "index.html"),
       },
       output: {
         assetFileNames: "[name].[ext]",
