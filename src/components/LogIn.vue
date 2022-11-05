@@ -5,7 +5,7 @@
     <p class="text-start mb-4 xl:mb-7">
       The place where you'll get things
       <span
-        class="inline-block no-line-through transition duration-500 hover:line-through hover:decoration-red-400 hover:decoration-2"
+        class="inline-block no-line-through transition duration-500 hover:line-through hover:decoration-2"
       >
         done</span
       >.

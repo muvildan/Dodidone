@@ -6,6 +6,9 @@ module.exports = {
   },
   content: ["./public/**/*.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
+    body: {
+      margin: 0,
+    },
     container: {
       center: true,
     },
