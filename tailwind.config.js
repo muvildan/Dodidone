@@ -10,9 +10,6 @@ module.exports = {
       center: true,
     },
     extend: {
-      fontFamily: {
-        nunito: ["nunito", "sans-serif"],
-      },
       animation: {
         text: "text 5s ease infinite",
         background: "background 20s ease infinite",
@@ -39,6 +36,10 @@ module.exports = {
           },
         },
       },
+    },
+    fontFamily: {
+      bold: ["nunito", "sans-serif"],
+      medium: ["nunito", "sans-serif"],
     },
   },
   variants: {},
