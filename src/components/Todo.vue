@@ -15,7 +15,7 @@
           </div>
           <div
             id="task"
-            class="max-w-[200px] xl:max-w-fit text-sm xl:text-base leading-5 font-medium"
+            class="xl:max-w-fit text-sm xl:text-base leading-5 font-medium"
           >
             {{ todo.task }}
           </div>
@@ -73,6 +73,7 @@ export default defineComponent({
 
 <style scoped>
 #task {
+  max-width: 200px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
