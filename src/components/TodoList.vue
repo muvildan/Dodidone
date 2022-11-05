@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-3 w-screen p-10 xl:p-24">
+  <div class="flex flex-col gap-3 w-screen min-h-screen max-h-fit p-10 xl:p-24">
     <div>
       <h1
         class="text-transparent font-bold text-4xl xl:text-6xl bg-gradient-to-r bg-clip-text from-indigo-500 via-green-600 to-indigo-500 animate-text"
@@ -7,16 +7,16 @@
         Dodidone.
       </h1>
     </div>
-    <div class="flex gap-5 my-3">
+    <div v-on:keyup.enter="addTask" class="flex gap-5 my-3">
       <input
         v-model="task"
-        class="w-[12rem] focus:w-screen focus:border-indigo-500 duration-1000 rounded bg-gray-100 border border-solid border-gray-200 placeholder-gray-700 focus:placeholder-gray-500 ...0 p-2"
+        class="input-expand"
         type="text"
-        placeholder="Add here your new task. Like the groceries you always forget to buy, that pending call you've been procrastinating. You do you. :)"
+        placeholder="Add here your new task. Maybe those groceries you always forget to buy, that pending call you've been procrastinating for days, or just your new year resolutions. You do you!"
       />
       <button @click="addTask" class="primary-button">Add</button>
     </div>
-    <div id="board" class="h-3/4 mb-20 xl:mb-0">
+    <div id="board" class="min-h-3/4 max-h-fit mb-25 xl:mb-5">
       <div
         class="sm:min-h-1/2 xl:min-h-1/3 py-8 flex flex-row flex-wrap justify-center gap-5"
       >

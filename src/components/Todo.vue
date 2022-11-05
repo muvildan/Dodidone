@@ -1,9 +1,9 @@
 <template>
   <Transition name="fade" mode="out-in">
     <li
-      class="sm:min-h-1/2 xl:min-h-1/3 xl:max-w-max bg-white border-teal p-1/2 xl:p-8 border-t-12 rounded-lg shadow-xl cursor-pointer hover:bg-gray-200 focus:outline-none focus:bg-gray-200 transition duration-150 ease-in-out"
+      class="mx-2 sm:min-h-1/2 xl:min-h-1/3 xl:max-w-max bg-white border-teal p-1/2 xl:py-6 xl:px-2 border-t-12 rounded-lg shadow-xl cursor-pointer hover:bg-gray-200 focus:outline-none focus:bg-gray-200 transition duration-150 ease-in-out"
     >
-      <div class="flex items-center px-4 py-4 sm:px-6">
+      <div class="flex items-center p-2 xl:py-0 sm:px-6">
         <div class="min-w-0 flex-1 flex items-center">
           <div>
             <input
@@ -13,7 +13,7 @@
               :checked="todo['is_complete']"
             />
           </div>
-          <div class="truncate text-sm leading-5 font-medium">
+          <div class="max-w-[150px] truncate xl:max-w-fit text-sm xl:text-base leading-5 font-medium">
             {{ todo.task }}
           </div>
         </div>

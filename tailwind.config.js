@@ -11,7 +11,7 @@ module.exports = {
     },
     extend: {
       animation: {
-        text: "text 5s ease infinite",
+        text: "text 7s ease infinite",
         background: "background 20s ease infinite",
       },
       keyframes: {
@@ -27,11 +27,11 @@ module.exports = {
         },
         text: {
           "0%, 100%": {
-            "background-size": "100% 400%",
+            "background-size": "100% 300%",
             "background-position": "left center",
           },
           "50%": {
-            "background-size": "400% 100%",
+            "background-size": "300% 100%",
             "background-position": "right center",
           },
         },

@@ -7,7 +7,7 @@ import LogOut from "../components/LogOut.vue";
   <Suspense>
     <template #default>
       <div
-        class="w-full h-full xl:h-screen grid grid-cols-2 bg-gradient-to-r bg-clip-background background-transparent from-indigo-100 via-green-200 to-indigo-100 animate-background"
+        class="w-full h-full grid grid-cols-2 gap-12 bg-gradient-to-r bg-clip-background background-transparent from-indigo-100 via-green-200 to-indigo-100 animate-background"
       >
         <TodoList />
         <LogOut />

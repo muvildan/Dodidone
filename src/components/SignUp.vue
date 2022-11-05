@@ -38,7 +38,7 @@
           auth.handleSignup({ email, password }, { userName, userSurname })
         "
         href="#"
-        class="btn-black-outline"
+        class="btn-black-outline w-fit self-center"
         tabindex="0"
       >
         Sign up

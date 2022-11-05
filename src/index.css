@@ -6,7 +6,11 @@
 
 /* Write your own custom component styles here */
 .primary-button {
-  @apply border border-transparent bg-indigo-500 text-white font-bold py-2 px-4 rounded text-center;
+  @apply border border-transparent bg-indigo-400 text-white font-bold py-2 px-4 rounded text-center;
+}
+
+.primary-button:hover {
+  @apply transition duration-150 border border-transparent bg-indigo-600 text-white font-bold py-2 px-4 rounded text-center;
 }
 
 .btn-black {
@@ -14,23 +18,35 @@
 }
 
 .btn-black:hover {
-  @apply transition duration-150 bg-white text-black;
+  @apply transition duration-150 font-bold bg-white text-black border-black;
 }
 
 .btn-black-outline {
-  @apply border border-black text-black py-2 px-4 rounded font-bold text-center;
+  @apply border border-black text-black py-1 px-4 rounded font-bold text-center;
 }
 
 .btn-black-outline:hover {
-  @apply transition duration-150 bg-black text-white;
+  @apply transition duration-500 bg-black text-white;
+}
+
+.input-expand {
+  @apply w-[200px] rounded bg-gray-100 border border-solid border-gray-300 placeholder-gray-700 p-2;
+}
+
+.input-expand:hover, .input-expand:focus {
+  @apply w-full border-indigo-400 border placeholder-gray-500;
 }
 
 html,
 body,
 #app {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   min-height: 100vh;
   margin: 0;
   padding: 0;
+}
+
+input {
+  transition-duration: 1s;
 }
