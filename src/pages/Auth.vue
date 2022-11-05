@@ -1,7 +1,7 @@
 <template>
   <main id="auth-bg">
     <div
-      class="flex flex-col gap-4 min-h-screen w-screen justify-start mx-auto sm:w-1/2 xl:w-1/3"
+      class="flex flex-col gap-4 min-h-screen w-screen justify-start xl:justify-center mx-auto sm:w-1/2 xl:w-1/3"
     >
       <div
         class="m-10 xl:m-0 w-max flex flex-col self-center xl:self-end mb-1 xl:mb-5 sm:min-h-1/2 xl:min-h-1/3 border-teal px-12 border-t-12 rounded-lg shadow-xl bg-white"

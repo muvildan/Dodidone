@@ -61,6 +61,8 @@ export const userStore = defineStore("user", {
           return;
         }
         alert("Signup successful, confirmation mail should be sent soon!");
+        router.push({ path: "/auth" });
+        window.location.href = window.location.href;
       } catch (err) {
         alert("Fatal error signing up");
         console.error("signup error", err);
