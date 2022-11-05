@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { defineConfig, resolveBaseUrl } from "vite";
 import vue from "@vitejs/plugin-vue";
 
 // https://vitejs.dev/config/
@@ -7,6 +7,9 @@ export default defineConfig({
   build: {
     minify: false,
     rollupOptions: {
+      input: {
+        main: resolveBaseUrl(__dirname, "index.html"),
+      },
       output: {
         assetFileNames: "[name].[ext]",
       },
